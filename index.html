@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>星月笺</title>
+    <style>
+        body {
+            background: #ffe6f2;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            font-family: 'Segoe UI', cursive;
+            overflow: hidden;
+        }
+
+        .container {
+            background: linear-gradient(45deg, #fff0f5, #ffe4e1);
+            padding: 40px 60px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(255, 182, 193, 0.3);
+            position: relative;
+            max-width: 600px;
+            text-align: center;
+            z-index: 1;
+        }
+
+        h1 {
+            color: #b76e79;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(183,110,121,0.2);
+            animation: fadeIn 2s ease-in;
+        }
+
+        .poem {
+            line-height: 1.8;
+            color: #696969;
+            font-size: 1.1em;
+            opacity: 0;
+            animation: slideUp 1s ease-out forwards;
+            animation-delay: 0.5s;
+        }
+
+        .heart {
+            color: #ff69b4;
+            font-size: 2em;
+            margin: 20px 0;
+            animation: pulse 2s infinite;
+        }
+
+        .sincere-text {
+            font-size: 1em;
+            line-height: 1.6;
+            margin: 25px 0;
+            color: #8b6969;
+            font-style: italic;
+        }
+
+        .signature {
+            text-align: right;
+            color: #b76e79;
+            font-family: '楷体', cursive;
+            margin-top: 30px;
+            font-size: 1.2em;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .petal {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #ffb6c1;
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(100vh) rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // 花瓣特效
+        for(let i=0; i<30; i++){
+            const petal = document.createElement('div');
+            petal.className = 'petal';
+            petal.style.left = Math.random() * 100 + 'vw';
+            petal.style.animationDuration = Math.random() * 3 + 2 + 's';
+            petal.style.opacity = Math.random();
+            document.body.appendChild(petal);
+        }
+    </script>
+
+    <div class="container">
+        <h1>致时光里的思怡宝宝</h1>
+        <div class="poem">
+            <p>二月风裁开云絮，落笔处<br>
+            尽是未说出口的晨昏线<br>
+            你的名字，是穿过指间的月光<br>
+            在每个黄昏氤氲成诗</p>
+
+            <div class="heart">♥</div>
+
+            <p>若将相遇叠成信笺<br>
+            愿以星河为蜡，岁月为封<br>
+            此后的每个潮汐<br>
+            都写满与你的花期</p>
+
+            <p class="sincere-text">
+                我们都是不善表达的羞怯者，<br>
+                最浪漫的话语也只是最喜欢而已，<br>
+                可是我想将此刻加以纪念，<br>
+                以我所怀有的真挚爱意凝聚于此，<br>
+                这便是我给宝宝的情人节礼物，<br>
+                独一无二的爱意。
+            </p>
+
+            <p class="signature">永远爱你的小狗：童子航</p>
+        </div>
+    </div>
+</body>
+</html>
